@@ -9,7 +9,7 @@ const [url, setUrl] = useState<string | undefined>('');
 
 useEffect(() => {
   const queryInfo = {active: true, lastFocusedWindow: true};
-  chrome.tabs && chrome.tabs.query(queryInfo, tabs => {
+  chrome.tabs && chrome.tabs.query(queryInfo, tabs => {   //chrome available because of "@types/chrome" package.
     const url = tabs[0].url;
     setUrl(url);
   })
